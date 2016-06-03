@@ -38,38 +38,54 @@
           <p class="about-title">esmé</p>
           <p class="about-subtitle">A studio for original films & multimedia experiments inspired by the other ways of seeing everyday life.</p>
           
-          <p class="about-body">Recently, we've wondered: In the flood of content online, is there such a thing as a fountain of youth? <br>
+          <p class="about-body">We've been thinking: In the flood of content online, is there such a thing as a fountain of youth? <br>
 
           <br> Figuratively speaking, we mean the kind of flood that flows with "truths", right or wrong, that make us feel lost in society and more disillusioned than we ever expected.  Happens to the best of us, doesn't it? <br>
 
-          <br>For esmé, we aim to make the kind of media that'll show us how to see our everyday (and others) anew, perhaps clear a path to our childhood dreams, and in spite of however many years aboard Spaceship Earth, still inspire us to think, half-smiling, “it feels good to be alive."<br>
+          <br>For <span class="bold-italic">esmé</span>, we aim to make the kind of media that'll show us how to see our everyday (and others) anew, perhaps clear a path to our childhood dreams, and in spite of however many years aboard Spaceship Earth, still inspire us to think, half-smiling, “it feels good to be alive."<br>
 
           <br>By means most sincere, at times positively absurd, and always cinematic, we're on our way and would be happy to hear from collaborators and clients alike.  (Our select clients include Redscout, Absolut Vodka, Google, Vogue, Montessori Model United Nations, and Morgan Stanley.)</p>
 
-          <div id="emoji"></div>
+          <div id="emoji"><img src="images/emoji-peacesign.png" class="emoji"></div>
   
         </div>
 
 
         <div class="work-container">
           
-          <a href="http://vimeo.com"><p class="vimeo">Watch our films on Vimeo</p></a>
-          <a href="http://instagram.com"><p class="instagram">Read our microfiction on Instagram</p></a>
+          <div class="social"><a href="http://vimeo.com" class="social">Watch our films on <img src='images/vimeo-logo.png' class="vimeo"></a></div>
+          <div class="social"><a href="http://instagram.com" class="social">Read our microfiction on <img src='images/instagram-logo.png' class="instagram"></a></div>
        
         </div>
 
+      </div>
 
       <div class="contact-container">
+
+
+        <div class="letterhead-container">
+          
+          <p class="dear-esme">Dear esmé:</p>
+          <p id="date" class="date"></p>
+
+        </div>
+
+
 
         <form>
 
           <div id="letter">
-            <label for="letter">Dear esmé:</label>
             <textarea id="letter" name="user_letter"></textarea>
           </div>
 
+          
+          <div class="letterhead-container">
+            <p class="dear-esme">Sincerely,</p>
+          </div>
+
+
           <div id="from">
-            <label for="name">your name</label>
+            <label for="name">your name:</label>
             <input type="text" id="name" name="user_name">
           </div>
 
@@ -88,7 +104,16 @@
 
 
 
-    </div>
+<script>
+  var today = new Date();
+  var month = today.getMonth() + 1 ;
+  var day = today.getDate();
+  var year = today.getFullYear();
+  newdate = month + "/" + day + "/" + year;
+  document.getElementById("date").innerHTML = newdate;
+</script>
+
+   
 
 
 
