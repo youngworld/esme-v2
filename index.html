@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <meta name="google-site-verification" content="TpJIPhcrETFO4bqIeJO-8llaBD_L287d1MNHf1Iv78c" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum scale=1">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 
@@ -24,7 +25,15 @@
 
         
         <div class="video-container">
-          <div id="video"></div>
+
+          <video autoplay loop class="full">
+            <source src="videos/covermask-testvideo.mp4" type="video/mp4">
+          </video> 
+         
+          <video autoplay loop class="mask">
+            <source src="videos/covermask-test-2.mp4" type="video/mp4">
+          </video> 
+
         </div>
 
       </div>
@@ -44,7 +53,7 @@
 
           <br>For <span class="bold-italic">esmé</span>, we aim to make the kind of media that'll show us how to see our everyday (and others) anew, perhaps clear a path to our childhood dreams, and in spite of however many years aboard Spaceship Earth, still inspire us to think, half-smiling, “it feels good to be alive."<br>
 
-          <br>By means most sincere, at times positively absurd, and always cinematic, we're on our way and would be happy to hear from collaborators and clients alike.  (Our select clients include Redscout, Absolut Vodka, Google, Vogue, Montessori Model United Nations, and Morgan Stanley.)</p>
+          <br>By means most sincere, at times positively absurd, and always cinematic, we're on our way and would be happy to hear from collaborators and clients alike.  (Our commerical clients include Redscout, Absolut Vodka, Google, Vogue, Montessori Model United Nations, and Morgan Stanley.)</p>
 
           <div id="emoji"><img src="images/emoji-peacesign.png" class="emoji"></div>
   
@@ -53,8 +62,11 @@
 
         <div class="work-container">
           
-          <div class="social"><a href="http://vimeo.com" class="social">Watch our films on <img src='images/vimeo-logo.png' class="vimeo"></a></div>
-          <div class="social"><a href="http://instagram.com" class="social">Read our microfiction on <img src='images/instagram-logo.png' class="instagram"></a></div>
+          <div class="social"><a href="http://vimeo.com" class="vimeo">Watch our films on <img src='images/vimeo-logo.png' class="vimeo"></a></div>
+
+          <div class="social"><a href="http://instagram.com" class="instagram">Read our microfiction on <img src='images/instagram-logo.png' class="instagram"></a></div>
+       
+         
        
         </div>
 
@@ -64,64 +76,97 @@
 
 
         <div class="letterhead-container">
-          
           <p class="dear-esme">Dear esmé:</p>
           <p id="date" class="date"></p>
-
         </div>
-
 
 
         <form>
 
           <div id="letter">
-            <textarea id="letter" name="user_letter"></textarea>
+            <textarea id="textarea" name="user_letter"></textarea>
           </div>
 
           
-          <div class="letterhead-container">
+          <div class="signature-container">
             <p class="dear-esme">Sincerely,</p>
           </div>
 
 
           <div id="from">
-            <label for="name">your name:</label>
-            <input type="text" id="name" name="user_name">
+            <input type="text" id="name" name="user_name" value="Name" onfocus="this.value = this.value=='Name'?'':this.value;" onblur="this.value = this.value==''?'Name':this.value;">
           </div>
 
           <div id="email">
-            <label for="mail">email:</label>
-            <input type="email" id="mail" name="user_email">
+            <input type="email" id="mail" name="user_email" value="Email" onfocus="this.value = this.value=='Email'?'':this.value;" onblur="this.value = this.value==''?'Email':this.value;">
           </div>
 
           <div class="button">
-            <button type="submit">Send</button>
+            <button type="submit" id="submit">Send</button>
           </div>
-        
+    
+
         </form>
 
       </div>
 
+  </div>
+
+
 
 
 <script>
+  
+
+// Cover Art //
+
+  var mask = $('video.mask')
+
+  .mouseover(function() {
+    $(mask).css("-webkit-filter", "grayscale(0%)");
+  })
+  .mouseout(function() {
+    $(mask).css("-webkit-filter", "grayscale(100%)");
+  })
+
+  .mousedown(function() {
+    $(mask).css('opacity', "0");
+    $(mask).css('cursor', "none");
+  })  
+  .mouseup(function() {
+    $(mask).css('opacity', "1");
+    $(mask).css('cursor', "pointer");
+
+  });
+
+
+ 
+
+// Set Letter Date //
+
   var today = new Date();
   var month = today.getMonth() + 1 ;
   var day = today.getDate();
   var year = today.getFullYear();
   newdate = month + "/" + day + "/" + year;
   document.getElementById("date").innerHTML = newdate;
-</script>
-
-   
-
-
-
-
-
 
   
-  </div>
+// Flex Letter Form // 
+
+  var textarea = document.getElementById("textarea");
+  // var limit = 200;
+
+  textarea.oninput = function() {
+  textarea.style.height = "";
+  textarea.style.height = Math.min(textarea.scrollHeight, 1000) + "px";
+
+};
+
+</script>
+
+
+
 
 </body>
 </html>
