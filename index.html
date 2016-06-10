@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +22,7 @@
         <div class="quote-container">
           <p class="quote">"Make it extremely squalid and moving."</p>
           <p class="esme-signature">esmé</p>
+  
         </div>  
 
         
@@ -47,13 +49,15 @@
           <p class="about-title">esmé</p>
           <p class="about-subtitle">A studio for original films & multimedia experiments inspired by the other ways of seeing everyday life.</p>
           
-          <p class="about-body">We've been thinking: In the flood of content online, is there such a thing as a fountain of youth? <br>
+          <p class="about-body">As we grow older, we wonder: In the flood of content online, is there such a thing as a fountain of youth? <br>
 
-          <br> Figuratively speaking, we mean the kind of flood that flows with "truths", right or wrong, that make us feel lost in society and more disillusioned than we ever expected.  Happens to the best of us, doesn't it? <br>
+          <br> Figuratively speaking, we mean the kind of flood that flows with "truths", right or wrong, that ultimately make us feel lost in society and more disillusioned than we ever expected. Drifting, we may stop growing.  Alone, we choose to become an island. Happens to the best of us, doesn't it? <br>
 
-          <br>For <span class="bold-italic">esmé</span>, we aim to make the kind of media that'll show us how to see our everyday (and others) anew, perhaps clear a path to our childhood dreams, and in spite of however many years aboard Spaceship Earth, still inspire us to think, half-smiling, “it feels good to be alive."<br>
+          <br>For <span class="bold-italic">esmé</span>, we aim to make the kind of media that can show, quite literally, other ways of viewing the everyday world, beginning by how we had freely seen in our childhood or adolescence, and in spite of the number of our years aboard Spaceship Earth, stir us to utter still, "it feels good to be alive."<br>
 
-          <br>By means most sincere, at times positively absurd, and always cinematic, we're on our way and would be happy to hear from collaborators and clients alike.  (Our commerical clients include Redscout, Absolut Vodka, Google, Vogue, Montessori Model United Nations, and Morgan Stanley.)</p>
+          <br>By means cinematic, most honest, and at times absurd, we're on our way. Our commercial partners include Redscout, Google, Absolut, Montessori Model United Nations, & Vogue Magazine. <br>
+          
+          <br><a id="button" class="body" href="#textarea">We'd love to hear from you.</p></a>
 
           <div id="emoji"><img src="images/emoji-peacesign.png" class="emoji"></div>
   
@@ -62,9 +66,9 @@
 
         <div class="work-container">
           
-          <div class="social"><a href="http://vimeo.com" class="vimeo">Watch our films on <img src='images/vimeo-logo.png' class="vimeo"></a></div>
+          <div class="social"><a href="https://vimeo.com/studioesme" class="vimeo">Watch our films on <img src='images/vimeo-logo.png' class="vimeo"></a></div>
 
-          <div class="social"><a href="http://instagram.com" class="instagram">Read our microfiction on <img src='images/instagram-logo.png' class="instagram"></a></div>
+          <div class="social"><a href="https://www.instagram.com/studioesme/" class="instagram">Read our microfiction on <img src='images/instagram-logo.png' class="instagram"></a></div>
        
          
        
@@ -81,7 +85,7 @@
         </div>
 
 
-        <form>
+        <form action="https://formspree.io/info@studioesme.com" method="POST">
 
           <div id="letter">
             <textarea id="textarea" name="user_letter"></textarea>
@@ -102,7 +106,7 @@
           </div>
 
           <div class="button">
-            <button type="submit" id="submit">Send</button>
+            <button type="submit" value="Send" id="submit">Send</button>
           </div>
     
 
@@ -110,13 +114,23 @@
 
       </div>
 
-  </div>
+    </div> <!-- Site Wrapper -->
 
 
+
+<footer> 
+
+  <!-- <p class="footer"> "Make it extremely squalid and moving." <span class="italic">For Esmé, With Love & Squalor</span> by J.D. Salinger </p> -->
+
+  <p class="footer"> &copy; 2016 <span class="italic">STUDIO ESMÉ</span></p>
+
+</footer>
 
 
 <script>
   
+
+
 
 // Cover Art //
 
@@ -140,7 +154,15 @@
   });
 
 
- 
+// Smooth Scroll to Letter //
+
+$("#button").click(function() {
+    $('html, body').animate({
+        scrollTop: $('#textarea').offset().top
+    }, 1200);
+    return false;
+});
+
 
 // Set Letter Date //
 
@@ -155,13 +177,16 @@
 // Flex Letter Form // 
 
   var textarea = document.getElementById("textarea");
-  // var limit = 200;
+      // var limit = 200;
 
   textarea.oninput = function() {
   textarea.style.height = "";
   textarea.style.height = Math.min(textarea.scrollHeight, 1000) + "px";
 
 };
+
+
+
 
 </script>
 

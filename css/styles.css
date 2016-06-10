@@ -106,7 +106,7 @@ p.quote {
   font-weight: 400;
   font-size: 2.6em;
   color: #ddd;
-  margin: 0;
+  margin: 0 0 0px 0;
   padding: 0;
 }
 
@@ -117,6 +117,7 @@ p.esme-signature {
   font-size: 2.1em;
   color: black;
   margin: 0;
+  opacity: .3;
   padding: 10px 20px 0px 0px;
 }
 
@@ -128,9 +129,9 @@ p.esme-signature {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  transition: 1s ease-in-out 0s;
 /*  background: yellow;*/
 }
-
 
 .about-container {
   display: flex;
@@ -207,6 +208,8 @@ img.emoji {
   text-align: center;
   margin: 10px;
   padding: 0;
+
+
 }
 
 .meanwhile {
@@ -236,7 +239,7 @@ img.instagram {
 }
 
 
-a.vimeo, a.instagram, a.meanwhile{
+a.vimeo, a.instagram {
   width: 100%;
   height: 100%;
   text-decoration: none;
@@ -244,6 +247,8 @@ a.vimeo, a.instagram, a.meanwhile{
   font-weight: 400;
   font-size: 2.3em;
   color: white;
+  
+
 
 }
 
@@ -257,7 +262,7 @@ background: -ms-linear-gradient(-45deg, rgba(26,182,234,1) 0%, rgba(188,224,238,
 background: linear-gradient(135deg, rgba(26,182,234,1) 0%, rgba(188,224,238,0.8) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ab6ea', endColorstr='#bce0ee', GradientType=1 );
 margin: 0;
-
+  
 }
 
 
@@ -272,7 +277,24 @@ background: linear-gradient(45deg, rgba(254,218,120,0.5) 0%, rgba(219,40,121,0.6
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feda78', endColorstr='#444ec2', GradientType=1 );
 margin: 0;
 
+
 }
+
+a.body {
+  text-decoration: none;
+  border-bottom: 10px solid #f0f0f0;
+  color: #aaa;
+/*  transition: .4s ease-in-out 0s;*/
+}
+
+a.body:hover {
+  text-decoration: none;
+  border-bottom-width: 8px; 
+  border-bottom-color: #f0ccb4;
+  color: #aaa;
+/*  transition: .4s ease-in-out 0s;*/
+}
+
 
 
 /***** CONTACT SECTION ******/
@@ -286,7 +308,7 @@ margin: 0;
   width: 90%;
   height: auto;
 /*  background:#ccc;*/
-  padding-bottom: 200px;
+  padding-bottom: 150px;
   margin: 80px 0 0 0;
 }
 
@@ -365,7 +387,7 @@ input {
   color: #ccc;
   border: none;
   outline-width: 0;
-  margin: 10px 0;
+  margin: 20px 0;
   width: 100%;
 
 }
@@ -385,8 +407,113 @@ padding: 20px 40px;
 }
 
 
+button:hover {
+  background: #f0ccb4;
+}
 
 
+/***** FOOTER SECTION ******/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background: #ddd;
+  color: white;
+}
+
+p.footer {
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 5px;
+  padding: 20px;
+
+}
+
+span.italic {
+  font-style: italic;
+}
+
+/***** RESPONSIVE STYLING & MEDIA QUERIES ******/
+
+@media all and (max-width: 1700px) {
+  .social, a.vimeo, a.instagram {height: 240px;}
+  a.vimeo, a.instagram, a.meanwhile {font-size: 2em;}
+  img.vimeo {width: 100px;}
+  img.instagram {width: 140px;}
+}
+
+@media all and (max-width: 1400px) {
+  .social, a.vimeo, a.instagram {flex-direction: column; flex-wrap: nowrap; width: 100%; margin: 6px;}
+  img.vimeo {margin-top: 8px;}
+  .work-container {width: 100%;}
+
+}
+
+
+@media all and (max-width: 1080px) {
+  p.quote {font-size: 2.3em;}
+  p.esme-signature {font-size: 2em; text-align: left;}
+
+  .work-container {flex-direction: column; width: 100%;}
+  .social, a.vimeo, a.instagram {flex-direction: row; flex-wrap: nowrap; width: 100%; margin: 6px;}
+  img.vimeo {margin-top: 0px;}
+
+  p.dear-esme {font-size: 2.4em;}
+  p.date {font-size: 1.6em;}
+  textarea {font-size: 1.8em; line-height: 1.5;}
+  input, button {font-size: 1.8em;}
+}
+
+
+
+@media all and (max-width: 820px) {
+  p.quote {font-size: 2em;}
+
+  .about-container {width: 80%;}
+  p.esme-signature {font-size: 1.8em;}
+  p.about-subtitle {font-size: 2em;}
+
+  .letterhead-container {width: 90%; margin-top: 60px;}
+  form {width: 75%;}
+}
+
+
+@media all and (max-width: 730px) {
+  .quote-container {align-items: center;}
+  p.quote {font-size: 2.8em; text-align: center;}
+  p.esme-signature {font-size: 2.4em; text-align: center;}
+
+  p.about-title {margin-top: 100px;}
+  .social, a.vimeo, a.instagram {flex-direction: column; flex-wrap: nowrap; width: 100%; margin: 6px;}
+  img.vimeo {margin-top: 8px;}
+
+}
+
+
+@media all and (max-width: 560px) {
+  p.quote {font-size: 2.2em; text-align: center;}
+  p.esme-signature {font-size: 1.8em; text-align: center; padding-left: 4px;}
+  p.about-subtitle {font-size: 1.8em;}
+  p.about-body {font-size: 1.1em;}
+
+  a.vimeo, a.instagram, a.meanwhile {font-size: 1.6em;}
+  img.vimeo {width: 80px;}
+  img.instagram {width: 110px;}
+  .work-container {height: 360px;}
+
+  p.dear-esme {font-size: 1.6em;}
+  p.date {font-size: 1.2em;}
+  textarea {font-size: 1.4em; line-height: 1.4; min-height: 120px;}
+  input, button {font-size: 1.4em;}
+  
+  
 
 
 
