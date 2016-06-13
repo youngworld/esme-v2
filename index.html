@@ -22,18 +22,25 @@
         <div class="quote-container">
           <p class="quote">"Make it extremely squalid and moving."</p>
           <p class="esme-signature">esmé</p>
+
   
         </div>  
 
         
         <div class="video-container">
 
-          <video autoplay loop class="full">
-            <source src="videos/covermask-testvideo.mp4" type="video/mp4">
+          <video autoplay loop class="full-standard">
+            <source src="videos/cover-01-bottom.mp4" type="video/mp4">
           </video> 
+
+          <video autoplay loop class="full">
+            <source src="videos/cover-01-bottom-wide.mp4" type="video/mp4">
+          </video> 
+
+          <div id="white"></div>
          
           <video autoplay loop class="mask">
-            <source src="videos/covermask-test-2.mp4" type="video/mp4">
+            <source src="videos/cover-01-top-2.mp4" type="video/mp4">
           </video> 
 
         </div>
@@ -47,17 +54,25 @@
         <div class="about-container">
           
           <p class="about-title">esmé</p>
-          <p class="about-subtitle">A studio for original films & multimedia experiments inspired by the other ways of seeing everyday life.</p>
+          <p class="about-subtitle">A studio for original films & multimedia experiments inspired by the extraordinary ways of seeing everyday life.</p>
           
-          <p class="about-body">As we grow older, we wonder: In the flood of content online, is there such a thing as a fountain of youth? <br>
+          <p class="about-body">We've been wondering: In the flood of content online, is there such a thing as a fountain of youth? <br>
 
           <br> Figuratively speaking, we mean the kind of flood that flows with "truths", right or wrong, that ultimately make us feel lost in society and more disillusioned than we ever expected. Drifting, we may stop growing.  Alone, we choose to become an island. Happens to the best of us, doesn't it? <br>
 
-          <br>For <span class="bold-italic">esmé</span>, we aim to make the kind of media that can show, quite literally, other ways of viewing the everyday world, beginning by how we had freely seen in our childhood or adolescence, and in spite of the number of our years aboard Spaceship Earth, stir us to utter still, "it feels good to be alive."<br>
+          <br>For <span class="bold-italic">esmé</span>, we aim to make the kind of media that can show, quite literally, other ways of viewing the world, beginning with how we had more freely seen in our childhood or adolescence, and in spite of the number of our years aboard Spaceship Earth, stir us to utter still, "it feels good to be alive."<br>
 
-          <br>By means cinematic, most honest, and at times absurd, we're on our way. Our commercial partners include Redscout, Google, Absolut, Montessori Model United Nations, & Vogue Magazine. <br>
+          <br>By means most honest, at times absurd, yet always cinematic, we're a filmmaking team that creates for digital canvases. Our commerical partners include Redscout, Google, Absolut, Montessori Model United Nations, & Vogue Magazine. <a id="button" class="body" href="#textarea">We'd love to hear from you too.</a></p>
+
+
+       
+
+
+        <!--   Our commercial partners include Redscout, Google, Absolut, Montessori Model United Nations, & Vogue Magazine. <br>
           
-          <br><a id="button" class="body" href="#textarea">We'd love to hear from you.</p></a>
+          <br> -->
+
+          
 
           <div id="emoji"><img src="images/emoji-peacesign.png" class="emoji"></div>
   
@@ -145,13 +160,17 @@
 
   .mousedown(function() {
     $(mask).css('opacity', "0");
+    $('#white').css('opacity', "0");
     $(mask).css('cursor', "none");
   })  
   .mouseup(function() {
     $(mask).css('opacity', "1");
+     $('#white').css('opacity', "1");
     $(mask).css('cursor', "pointer");
 
   });
+
+
 
 
 // Smooth Scroll to Letter //
