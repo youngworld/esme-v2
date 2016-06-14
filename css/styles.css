@@ -90,20 +90,22 @@ video.full {
 }
 
 video.full-standard {
-  display: none;
+  display: flex;
   width: 100%;
   position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto;
-  z-index: 0;
+  z-index: 1;
 }
 
 video.mask {
   height: 100%;
   max-width: 1000px;
   position: relative;
-  z-index: 1;
+  left: 0;
+  right: 0;
+  z-index: 3;
   -webkit-filter: grayscale(100%);
   -moz-filter:    grayscale(100%);
   -ms-filter:     grayscale(100%);
@@ -114,6 +116,10 @@ video.mask {
 
 }
 
+img.poster {
+  display: none;
+
+}
 
 #white {
   width: 100%;
@@ -122,6 +128,8 @@ video.mask {
   position: absolute;
   top: 40%;
   left: 0;
+  z-index: 2;
+  background: white;
 }
 
 
@@ -190,7 +198,7 @@ p.about-title {
   font-style: italic;
   font-size: 6em;
   padding: 0;
-  color: #202020;
+  color: #212121;
   margin: 200px 0 40px 0;
 }
 
@@ -198,7 +206,7 @@ p.about-subtitle {
   font-family: 'Playfair Display';
   font-weight: 400;
   font-size: 2.3em;
-  color: #bbb;
+  color: #BABABA;
   text-align: center;
   line-height: 1.6;
   max-width: 780px;
@@ -210,7 +218,7 @@ p.about-body {
   font-weight: 100;
   font-size: 1.3em;
   line-height: 1.8;
-  color: #aaa;
+  color: #969696;
   margin: 60px auto;
   max-width: 1600px;
 /*  background: cyan;*/
@@ -234,6 +242,8 @@ span.bold-italic {
 img.emoji {
   width: 40px;
   padding-bottom: 100px;
+    -webkit-filter: grayscale(20%);  Chrome, Safari, Opera 
+  filter: grayscale(20%);
 }
 
 img.vimeo {
@@ -280,8 +290,8 @@ a.vimeo {
   background: -ms-linear-gradient(-45deg, rgba(26,182,234,1) 0%, rgba(188,224,238,0.8) 100%);
   background: linear-gradient(135deg, rgba(26,182,234,1) 0%, rgba(188,224,238,0.8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ab6ea', endColorstr='#bce0ee', GradientType=1 );
-  -webkit-filter: grayscale(0%);  Chrome, Safari, Opera 
-  filter: grayscale(0%);
+  -webkit-filter: grayscale(35%);  Chrome, Safari, Opera 
+  filter: grayscale(35%);
 -webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;
 
 }
@@ -290,7 +300,6 @@ a.vimeo {
 a.vimeo:hover, a.vimeo:active {
   -webkit-filter: grayscale(0%);  Chrome, Safari, Opera 
   filter: grayscale(0%);
-    opacity: .75;
   
 }
 
@@ -311,8 +320,8 @@ a.instagram {
   background: -ms-linear-gradient(45deg, rgba(254,218,120,0.5) 0%, rgba(219,40,121,0.61) 44%, rgba(68,78,194,0.75) 100%);
   background: linear-gradient(45deg, rgba(254,218,120,0.5) 0%, rgba(219,40,121,0.61) 44%, rgba(68,78,194,0.75) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feda78', endColorstr='#444ec2', GradientType=1 );
-  -webkit-filter: grayscale(0%);  Chrome, Safari, Opera 
-  filter: grayscale(0%);
+  -webkit-filter: grayscale(30%);  Chrome, Safari, Opera 
+  filter: grayscale(30%);
 -webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;
 
 }
@@ -320,7 +329,7 @@ a.instagram {
  a.instagram:hover, a.instagram:active  {
   -webkit-filter: grayscale(0%);  Chrome, Safari, Opera 
   filter: grayscale(0%);
-    opacity: .75;
+    opacity: 1;
  }
 
 
@@ -328,15 +337,17 @@ a.instagram {
 a.body {
   text-decoration: none;
   border-bottom: 8px solid #f0f0f0;
-  color: #aaa;
+  color: #969696;
+  border-bottom-color: #F5E3D7;
+  border-bottom-width: 8px; 
 /*  transition: .4s ease-in-out 0s;*/
 }
 
 a.body:hover {
   text-decoration: none;
   border-bottom-width: 8px; 
-  border-bottom-color: #f0ccb4;
-  color: #aaa;
+  border-bottom-color: #FAD3B9;
+  color: #969696;
 /*  transition: .4s ease-in-out 0s;*/
 }
 
@@ -353,8 +364,8 @@ a.body:hover {
   width: 90%;
   height: auto;
 /*  background:#ccc;*/
-  padding-bottom: 100px;
-  margin: 60px 0 0 0;
+  padding-bottom: 140px;
+  margin: 20px 0 0 0;
 }
 
 
@@ -376,7 +387,7 @@ a.body:hover {
   justify-content: space-between;
   align-items: center;
   width: 75%;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 20px;
 /*  background: yellow;*/
 }
@@ -386,7 +397,7 @@ p.dear-esme {
   font-weight: 900;
   font-style: italic;
   font-size: 3.6em;
-  color: #363636;
+  color: #3B3B3B;
   margin: 0;
   padding: 0;
 }
@@ -396,7 +407,7 @@ p.date {
   font-style: italic;
   font-weight: 100;
   font-size: 2em;
-  color: #ccc;
+  color: #BABABA;
 }
 
 form {
@@ -414,7 +425,7 @@ textarea {
   font-size: 2.5em;
   line-height: 2;
   padding-top: 20px;
-  color: #ccc;
+  color: #969696;
   border: none;
   outline-width: 0;
   width: 100%;
@@ -429,7 +440,7 @@ input {
   font-family: 'Roboto';
   font-weight: 100;
   font-size: 2em;
-  color: #ccc;
+  color: #BABABA;
   border: none;
   outline-width: 0;
   margin: 20px 0;
@@ -446,7 +457,7 @@ border: none;
 cursor: pointer;
 outline-width: 0;
 margin-top: 20px;
-padding: 10px 30px;
+padding: 12px 30px;
 
 background: rgba(240,204,180,1);
 background: -moz-linear-gradient(-45deg, rgba(240,204,180,1) 0%, rgba(240,204,180,1) 35%, rgba(201,201,201,1) 100%);
@@ -457,6 +468,8 @@ background: -ms-linear-gradient(-45deg, rgba(240,204,180,1) 0%, rgba(240,204,180
 background: linear-gradient(135deg, rgba(240,204,180,1) 0%, rgba(240,204,180,1) 35%, rgba(201,201,201,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0ccb4', endColorstr='#c9c9c9', GradientType=1 );
 -webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;
+ -webkit-filter: grayscale(40%);  Chrome, Safari, Opera 
+  filter: grayscale(40%);
 
 }
 
@@ -464,7 +477,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0ccb4', end
 
 
 button:hover {
-opacity: .7;
+ -webkit-filter: grayscale(0%);  Chrome, Safari, Opera 
+  filter: grayscale(0%);
+    opacity: 1;
 }
 
 /***** FOOTER SECTION ******/
@@ -477,7 +492,7 @@ footer {
   align-items: center;
   width: 100%;
   height: auto;
-  background: #ddd;
+  background: #cbc9c8;
   color: white;
 }
 
@@ -500,6 +515,12 @@ span.italic {
 /***** RESPONSIVE STYLING & MEDIA QUERIES ******/
 
 
+
+@media all and (max-height: 640px){
+
+  #white {height: 320px; top: 250px;}
+  video.full {width: 100%; height: 260px; top: 300px;}
+}
 
 @media all and (max-width: 1700px) {
   
@@ -539,8 +560,9 @@ span.italic {
   /* Letter */
   p.dear-esme {font-size: 2.4em;}
   p.date {font-size: 1.6em;}
-  textarea {font-size: 1.8em; line-height: 1.5;}
-  input, button {font-size: 1.8em;}
+  textarea {font-size: 1.8em; line-height: 1.4;}
+  input {font-size: 1.6em;}
+  button {font-size: 1.5em;}
   
   /* Video */
   video.full {width: 100%;}
@@ -563,7 +585,7 @@ span.italic {
   /* Letter */
   .letterhead-container {width: 90%; margin-top: 60px;}
   form {width: 75%;}
-}
+
 
 /******************730*********************/
 
@@ -575,7 +597,10 @@ span.italic {
   /* Work */
   .social, a.vimeo, a.instagram {flex-direction: column; flex-wrap: nowrap; width: 97%; margin: 3px -2px;}
   img.vimeo {margin-top: 8px;}
+
 }
+
+
 
 /*******************710********************/
 
@@ -598,24 +623,17 @@ span.italic {
   img.instagram {width: 110px;}
   .work-container {height: 360px;}
 
-  p.dear-esme {font-size: 1.6em;}
-  p.date {font-size: 1.2em;}
+  p.dear-esme {font-size: 2em;}
+  p.date {font-size: 1.5em;}
   textarea {font-size: 1.4em; line-height: 1.4; min-height: 120px;}
   input, button {font-size: 1.4em;}
   
   /* Video */
   .video-container, video.mask, #white {height: 500px;}
-  #white {top: 250px;}
-  video.full {display: none;}
-  video.full-standard {display: flex; top: 350px;}
+  #white {top: 294px;}
+  video.full {top: 360px;}
   }
 
-
-/******************600********************/
-
-@media all and (max-width: 600px) {
-   video.full-standard {display: flex; top: 380px;}
- }
 
 
 /************ iPhone 6 Plus ****************/
@@ -623,16 +641,31 @@ span.italic {
 @media all and (max-width: 415px) {
   .site-wrapper {margin-top: 20px;}
   .cover-container {justify-content: flex-start; margin-top: 20px;}
+  
   .quote-container {width: 320px; padding: 0;}
   p.quote {font-size: 1.9em; text-align: center;}
   p.esme-signature {font-size: 1.8em; text-align: center; padding-left: 4px;}
+
   p.about-title {margin-top: 100px;}
-  p.about-subtitle {font-size: 1.5em;}
+  p.about-subtitle {font-size: 2em; color: #D9D9D9;}
+  p.about-body, a.body {font-size: 1.1em; line-height: 1.7; color: #575757;}
+  
+
+video::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none}
+
+.custom-video-controls {
+  z-index: 2147483647;}
+
+
+  video.full {display: none;}
+  video.full-standard {display: flex; top: 350px;}
   .video-container, video.mask, #white {height: 320px;}
   video.mask, #white {display: none;}
   video.full-standard {top: 320px; display: flex;}
-
-}
+  img.poster {display: flex; width: 300px;}
+  
 
 /**************** iPhone 6 ******************/
 
@@ -643,10 +676,21 @@ span.italic {
   p.quote {font-size: 1.8em; text-align: center;}
   p.esme-signature {font-size: 1.6em; text-align: center; padding-left: 4px;}
   p.about-title {margin-top: 40px;}
-  p.about-subtitle {font-size: 1.58em;}
+  p.about-subtitle {font-size: 1.8em;}
+
+
+
   .video-container, video.mask, #white {height: 320px;}
   video.mask, #white {display: none;}
   video.full-standard {top: 300px; display: flex;}
+    img.poster {display: flex; width: 300px;}
+
+  .contact-container {padding-bottom: 120px;}
+  p.dear-esme {font-size: 1.8em;}
+  input {font-size: 1.25em; margin: 12px;}
+  button { font-size: 1.2em; margin-left: 10px;}
+
+  p.footer {font-weight: 400;}
 
 }
 
@@ -654,12 +698,30 @@ span.italic {
 
 @media all and (max-width: 320px) {
   .site-wrapper {margin-top: 0px;}
-  .quote-container {width: 220px;}
-  p.quote {font-size: 1.8em; text-align: center;}
+  .quote-container {width: 220px; margin-top: 20px;}
+  p.quote {font-size: 2em; text-align: center;}
   p.esme-signature {font-size: 1.5em; text-align: center; padding-left: 4px;}
-  p.about-title {font-size: 4.5em; margin-top: 5px;}
-   p.about-subtitle {font-size: 1.65em;}
-  .video-container, video.mask, #white {height: 240px;}
+  p.about-title {font-size: 4.5em; margin-top: 60px;}
+  p.about-subtitle {font-size: 1.65em;}
+  p.about-body, a.body {font-size: 1em;} 
+
+  a.vimeo, a.instagram {font-size: 1.3em;}
+  img.vimeo {width: 70px;}
+  img.instagram {width: 100px;}
+  .work-container {height: 320px;}
+
+
+  .video-container, video.mask, #white {height: 300px;}
+  video.full-standard {top: 320px;}
   #white {top: 300px;}
+    img.poster {display: flex; width: 280px;}
+  
+  .letterhead-container {margin-top: 60px;}
+  p.dear-esme {font-size: 1.5em;}
+  p.date {font-size: 1.4em;}
+  input {font-size: 1.2em;}
+  button {font-size: 1.2em;}
+  textarea {height: 10px;}
+  p.footer {font-weight: 400;}
 
 }

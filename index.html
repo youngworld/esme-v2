@@ -29,9 +29,14 @@
         
         <div class="video-container">
 
-          <video autoplay loop class="full-standard">
+         <!--  <video loop class="full-standard" poster="images/cover-01-poster.gif" class="custom-video-controls">
             <source src="videos/cover-01-bottom.mp4" type="video/mp4">
-          </video> 
+          </video>  -->
+
+          <a href="javascript:playVideo();"><img src="images/cover-01-poster.gif" class="poster"></a>
+          <video loop id="video-player" class="full-standard" style="display:none !important;"><source src="videos/cover-01-bottom.mp4" type="video/mp4">
+          </video>
+
 
           <video autoplay loop class="full">
             <source src="videos/cover-01-bottom-wide.mp4" type="video/mp4">
@@ -40,7 +45,7 @@
           <div id="white"></div>
          
           <video autoplay loop class="mask">
-            <source src="videos/cover-01-top-2.mp4" type="video/mp4">
+            <source src="videos/cover-01-top-3.mp4" type="video/mp4">
           </video> 
 
         </div>
@@ -56,7 +61,7 @@
           <p class="about-title">esmé</p>
           <p class="about-subtitle">A studio for original films & multimedia experiments inspired by the extraordinary ways of seeing everyday life.</p>
           
-          <p class="about-body">We've been wondering: In the flood of content online, is there such a thing as a fountain of youth? <br>
+          <p class="about-body">In the flood of content online, is there such a thing as a fountain of youth? <br>
 
           <br> Figuratively speaking, we mean the kind of flood that flows with "truths", right or wrong, that ultimately make us feel lost in society and more disillusioned than we ever expected. Drifting, we may stop growing.  Alone, we choose to become an island. Happens to the best of us, doesn't it? <br>
 
@@ -81,9 +86,9 @@
 
         <div class="work-container">
           
-          <div class="social"><a href="https://vimeo.com/studioesme" class="vimeo">Watch our films on <img src='images/vimeo-logo.png' class="vimeo"></a></div>
+          <div class="social"><a href="https://vimeo.com/studioesme" target="_blank" class="vimeo">Watch our films on <img src='images/vimeo-logo.png' class="vimeo"></a></div>
 
-          <div class="social"><a href="https://www.instagram.com/studioesme/" class="instagram">Read our microfiction on <img src='images/instagram-logo.png' class="instagram"></a></div>
+          <div class="social"><a href="https://www.instagram.com/studioesme/" target="_blank" class="instagram">Read our microfiction on <img src='images/instagram-logo.png' class="instagram"></a></div>
        
          
        
@@ -172,12 +177,24 @@
 
 
 
+function playVideo() {
+  var videoPlayer = document.getElementById('video-player');
+  videoPlayer.addEventListener('ended', onVideoEnded, false);
+  videoPlayer.play();
+}
+
+function onVideoEnded(event) {
+  var videoPlayer = document.getElementById('video-player');
+  videoPlayer.webkitExitFullscreen();
+}
+
+
 
 // Smooth Scroll to Letter //
 
 $("#button").click(function() {
     $('html, body').animate({
-        scrollTop: $('#textarea').offset().top
+        scrollTop: $('.letterhead-container').offset().top
     }, 1200);
     return false;
 });
