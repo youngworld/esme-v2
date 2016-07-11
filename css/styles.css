@@ -41,6 +41,17 @@ body, html {
 /*  background: #bbb;*/
 }
 
+
+.client-quote-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 80px;
+/*  background: #bbb;*/
+}
+
 .video-container {
   display: flex;
   flex-direction: row;
@@ -147,6 +158,7 @@ p.quote {
   margin: 0 0 0px 0;
   padding: 0;
 }
+
 
 p.esme-signature {
   font-family: 'Playfair Display';
@@ -257,6 +269,8 @@ img.instagram {
   position: relative;
   top: 10px;
 }
+
+
 
 
 .social, a.vimeo, a.instagram {
@@ -429,7 +443,7 @@ textarea {
   border: none;
   outline-width: 0;
   width: 100%;
-  min-height: 200px;
+  min-height: 250px;
   resize: auto;
   overflow: visible;
   background: none;
@@ -512,6 +526,160 @@ span.italic {
 
 
 
+/***** CLIENT STYLING *****/
+
+.client-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+}
+
+.client-quote-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 80px 0 0 0;
+/*  background: cyan; */
+}
+
+.client-work-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0;
+  width: 100%;
+/*  background: yellow;*/
+}
+
+
+.client-logo-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0 0 0;
+  padding: 0;
+/*  background: yellow;*/
+}
+
+
+p.client-quote {
+  font-family: 'Playfair Display';
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #ddd;
+  margin: 0 0 0px 0;
+  padding: 0;
+}
+
+
+p.client-quote-signature {
+  font-family: 'Playfair Display SC';
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.2em;
+  color: #ddd;
+  margin: 0 0 0px 0;
+  padding: 20px 10px 0 0;
+}
+
+img.client {
+  width: 400px;
+  padding: 0;
+}
+
+.request-button-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  min-width: 820px;
+/*  background: cyan;*/
+  margin: 40px 0 0px 0;
+}
+
+
+a.redscout {
+  font-family: 'Playfair Display';
+  font-weight: 400;
+  font-size: 2em;
+  color: white;
+  text-decoration: none;
+  margin-top: 5px;
+  padding: 80px 100px 80px 100px;
+
+   background: rgba(23,193,255,1);
+background: -moz-linear-gradient(45deg, rgba(23,193,255,1) 0%, rgba(236,250,85,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(23,193,255,1)), color-stop(100%, rgba(236,250,85,1)));
+background: -webkit-linear-gradient(45deg, rgba(23,193,255,1) 0%, rgba(236,250,85,1) 100%);
+background: -o-linear-gradient(45deg, rgba(23,193,255,1) 0%, rgba(236,250,85,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(23,193,255,1) 0%, rgba(236,250,85,1) 100%);
+background: linear-gradient(45deg, rgba(23,193,255,1) 0%, rgba(236,250,85,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17c1ff', endColorstr='#ecfa55', GradientType=1 );
+  -webkit-filter: grayscale(35%);  Chrome, Safari, Opera 
+  filter: grayscale(35%);
+-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;
+}
+
+a.redscout:hover {
+   -webkit-filter: grayscale(0%);  Chrome, Safari, Opera 
+  filter: grayscale(0%);
+    opacity: 1;
+}
+
+
+
+p.client-body {
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-size: 1.3em;
+  line-height: 1.8;
+  color: #969696;
+  margin-bottom: 10px;
+  max-width: 1600px;
+/*  background: cyan;*/
+
+}
+
+.return-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+/*background: cyan;*/
+
+}
+
+a.client-return {
+  text-decoration: none;
+  color: #969696;
+  transition: color 0.7s ease;
+}
+
+a.client-return:hover {
+  color: black;
+    transition: color 0.7s ease;
+
+}
+
 /***** RESPONSIVE STYLING & MEDIA QUERIES ******/
 
 
@@ -586,6 +754,7 @@ span.italic {
   .letterhead-container {width: 90%; margin-top: 60px;}
   form {width: 75%;}
 
+ }
 
 /******************730*********************/
 
@@ -667,6 +836,18 @@ video::-webkit-media-controls-start-playback-button {
   img.poster {display: flex; width: 300px;}
   
 
+.client-wrapper {min-height: 700px;}
+.client-quote-container, .client-work-container  {width: 80%;}
+img.client {width: 300px;}
+p.client-quote {font-size: 1.3em; text-align: center;}
+.client-quote-container {align-items: center; width: 70%;}
+.request-button-container {min-width: 360px;}
+a.redscout {padding: 30px; text-align: center; font-size: 1.6em; line-height: 1.8;}
+
+
+}
+
+
 /**************** iPhone 6 ******************/
 
 @media all and (max-width: 377px) {
@@ -691,6 +872,17 @@ video::-webkit-media-controls-start-playback-button {
   button { font-size: 1.2em; margin-left: 10px;}
 
   p.footer {font-weight: 400;}
+
+
+.client-wrapper {min-height: 720px;}
+img.client {width: 260px;}
+p.client-quote {font-size: 1.3em; text-align: center;}
+.client-quote-container {margin-bottom: 0px;}
+
+.request-button-container {min-width: 330px;}
+a.redscout {padding: 32px; text-align: center; font-size: 1.5em; line-height: 1.8;}
+
+
 
 }
 
@@ -723,5 +915,15 @@ video::-webkit-media-controls-start-playback-button {
   button {font-size: 1.2em;}
   textarea {height: 10px;}
   p.footer {font-weight: 400;}
+
+.client-wrapper {min-height: 780px;}
+img.client {width: 220px;}
+p.client-quote {font-size: 1.2em; text-align: center;}
+.client-quote-container {margin-bottom: 0px;}
+
+.request-button-container {min-width: 280px;}
+a.redscout {padding: 28px; text-align: center; font-size: 1.3em; line-height: 1.8;}
+
+
 
 }
